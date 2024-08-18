@@ -31,7 +31,6 @@ float ACC_PWM(int acc_gyro) {
     if (acc_gyro < ACC_MIN) acc_gyro = ACC_MIN; // apply the accelerometer value within that range 
         if (acc_gyro > ACC_MAX) acc_gyro = ACC_MAX; // if below the range, set to min and if above set to max
 
-
 float PWM_Value = (acc_gyro - ACC_MIN) / (ACC_MAX - ACC_MIN); //Normalises the value to a range between 0-1
     PWM_Value = MIN_PWM + PWM_Value * (MAX_PWM - MIN_PWM); // Pulse width Modulation value = 0.0 + PWM value x 1.0 - 0.0
 
